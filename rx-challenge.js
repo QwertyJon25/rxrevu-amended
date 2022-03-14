@@ -48,11 +48,6 @@ function countSquares(doubleArrayInput, markedCellIdentifier) {
         }
     }
 
-    //
-
-
-
-
     return count;
 
 }
