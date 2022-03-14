@@ -4,16 +4,12 @@ let input3 = [['cell', 'x', 'x'], [0, 'x', 'x'],[0,0,0] ];
 
 
 /*
-
 Active square,
 assuming an input of [[x,x,x], [x,cell,0], [0,0,x]];  x for active, 0 for not
 or [[cell,x,x], [0,0,0], [0,0,0]]
-
-
 */
 
 function getFromArray(m, [x, y]) {
-    
    if (x < 0|| y < 0 || x > m[0].length || y > m[0][0].length) {
        return ['empty'];
    } return m[x][y];
@@ -24,14 +20,12 @@ function countSquares(doubleArrayInput, markedCellIdentifier) {
     
     let count = 0;
     
-
-    //brute force
-    //reveals the required cell coordinates after finding it
     for (let i = 0; i < doubleArrayInput.length; i++) {
+
         for (let j = 0; j < doubleArrayInput[i].length; j++) {
-            //loop over every cell looking for marked cell identifier
+        
             if (doubleArrayInput[i][j] === markedCellIdentifier) {
-                //now we can look for neighbors by moving [i, j] in a range of -1 to +1
+                
                 for (let q = i - 1; q <= i + 1; q++) {
                     for (let w = j - 1; w <= j + 1; w++) {
                         if (getFromArray(doubleArrayInput, [q, w]) === 'x') {
@@ -40,9 +34,6 @@ function countSquares(doubleArrayInput, markedCellIdentifier) {
                     }
                 }
           
-
-                //then return count here to end the loop earlier in case this is the top left or cetner, 
-                //instead of waiting until its at the end of the loop
                 return count
             }
         }
