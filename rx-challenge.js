@@ -2,7 +2,6 @@ let input = [['x','x','x'], ['x', 'cell', '0'], ['x','x','x']];
 let input2 = [['cell', 'x', 0], ['x', 'x', 0],[0,0,0] ];
 let input3 = [['cell', 'x', 'x'], [0, 'x', 'x'],[0,0,0] ];
 
-
 /*
 Active square,
 assuming an input of [[x,x,x], [x,cell,0], [0,0,x]];  x for active, 0 for not
@@ -15,9 +14,7 @@ function getFromArray(m, [x, y]) {
    } return m[x][y];
 }
 
-
 function countSquares(doubleArrayInput, markedCellIdentifier) {
-    
     let count = 0;
     
     for (let i = 0; i < doubleArrayInput.length; i++) {
